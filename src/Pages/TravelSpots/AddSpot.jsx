@@ -131,7 +131,6 @@ const AddSpot = () => {
                   />
                </div>
             </div>
-
             <div className='text-center w-full'>
                <button type='submit' className='btn btn-primary w-full'>Add</button>
             </div>
