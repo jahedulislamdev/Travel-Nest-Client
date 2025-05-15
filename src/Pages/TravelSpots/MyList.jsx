@@ -1,11 +1,11 @@
 import React from 'react';
 
-const AllSpot = () => {
+const MyList = () => {
    return (
       <div>
-         All spots
+         My added spot list
       </div>
    );
 };
 
-export default AllSpot;
+export default MyList;

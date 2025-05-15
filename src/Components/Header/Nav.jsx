@@ -6,10 +6,10 @@ import { Link, NavLink } from 'react-router-dom';
 const Nav = () => {
    const navLinks =
       <>
-         <NavLink> Home </NavLink>
-         <NavLink> All Tourists Spot </NavLink>
-         <NavLink to="/add-new-spot">Add New Spot</NavLink>
-         <NavLink> My List </NavLink>
+         <NavLink to={'/'}> Home </NavLink>
+         <NavLink to={'/all-spot'}> All Tourists Spot </NavLink>
+         <NavLink to={'/add-new-spot'}>Add New Spot</NavLink>
+         <NavLink to={'/my-list'}> My List </NavLink>
       </>
    return (
       <div className="navbar bg-base-100 shadow-sm px-4 ">
@@ -23,12 +23,12 @@ const Nav = () => {
                   <h1>hello world</h1>
                </div>
             </dialog>
-            <Link to={'/'} className="font-bold text-xl uppercase hidden md:block font-ubuntu">Traveller</Link>
+            <Link to={'/'} className="font-bold text-xl uppercase hidden md:block font-ubuntu">TravelNest</Link>
          </div>
          <div className="navbar-center uppercase space-x-10 font-medium hidden md:block opacity-70 font-ubuntu">
             {navLinks}
          </div>
-         <Link to={'/'} className="btn btn-ghost text-xl uppercase md:hidden font-ubuntu font-bold">Traveller</Link>
+         <Link to={'/'} className="btn btn-ghost text-xl uppercase md:hidden font-ubuntu font-bold">TravelNest</Link>
          <div className="navbar-end opacity-70">
             <Link to={"/login"} className='font-medium uppercase flex '><FaUser className='size-5' /> </Link>
          </div>

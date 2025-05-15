@@ -5,6 +5,7 @@ import {
    FaInstagram,
    FaLinkedinIn,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
    return (
@@ -12,7 +13,7 @@ const Footer = () => {
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
             {/* Logo and About */}
             <div>
-               <h1 className="text-2xl font-bold text-white mb-4">TravelNest</h1>
+               <h1 className="text-2xl font-bold text-white mb-4 uppercase ">TravelNest</h1>
                <p className="text-sm leading-relaxed">
                   Explore the world effortlessly. TravelNest helps you plan, manage,
                   and enjoy your journeys with confidence and comfort.
@@ -45,10 +46,10 @@ const Footer = () => {
             <div>
                <h2 className="text-xl font-semibold text-white mb-4">Follow Us</h2>
                <div className="flex space-x-4 text-xl">
-                  <a href="#" className="hover:text-white"><FaFacebookF /></a>
-                  <a href="#" className="hover:text-white"><FaTwitter /></a>
-                  <a href="#" className="hover:text-white"><FaInstagram /></a>
-                  <a href="#" className="hover:text-white"><FaLinkedinIn /></a>
+                  <Link to="https://www.facebook.com/jahedulislam.jishan.9" target="_blank" className="hover:text-white"><FaFacebookF /></Link>
+                  <Link to="https://x.com/JISHAN0002" target="_blank" className="hover:text-white"><FaTwitter /></Link>
+                  <Link to="https://www.instagram.com/m_jishan_2" target="_blank" className="hover:text-white"><FaInstagram /></Link>
+                  <Link to="https://www.linkedin.com/in/jahedul-islam-87881935b/" target="_blank" className="hover:text-white"><FaLinkedinIn /></Link>
                </div>
                <p className="mt-4 text-sm">Stay inspired with travel stories & deals.</p>
             </div>
