@@ -3,7 +3,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import AuthProvider from "../../Provider/context";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Login = () => {
    const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Login = () => {
 
       loginUser(email, password)
          .then(res => {
-            setUser(res.user)
+            setUser(res.user);
             toast.success('Login successfully 🎉', {
                style: {
                   background: '#1E293B',
