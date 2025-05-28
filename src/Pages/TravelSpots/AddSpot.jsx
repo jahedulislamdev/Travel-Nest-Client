@@ -8,11 +8,26 @@ const AddSpot = () => {
    const [travelTime, setTravelTime] = useState('');
 
    const handleFormSubmit = (e) => {
-
       e.preventDefault();
-      console.log("Season:", season);
-      console.log("Travel Time:", travelTime);
-      // You can collect the full form data from e.target.elements here if needed
+      const formData = new FormData(e.target);
+      const spotName = formData.get('spotName');
+      const spotImage = formData.get('spotImage');
+      const location = formData.get('location');
+      const shortDescription = formData.get('shortDescription');
+      const avgCost = formData.get('avgCost');
+      const visitorPerYear = formData.get('visitorPerYear');
+      const userEmail = formData.get('userEmail');
+      const userName = formData.get('userName');
+
+      const spotData = { spotName, spotImage, location, shortDescription, avgCost, season, travelTime, visitorPerYear, userEmail, userName };
+      console.log(spotData);
+      fetch('http://localhost:5000/spots', {
+         method: "POST",
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(spotData),
+      }).then(res => res.json()).then(data => console.log(data));
    };
 
    return (
@@ -25,7 +40,7 @@ const AddSpot = () => {
                   <label className='block mb-1 text-sm font-light'>Spot Name</label>
                   <input
                      type='text'
-                     name='name'
+                     name='spotName'
                      placeholder='Enter spot name'
                      className='w-full input border rounded px-3 py-2 focus:outline-none'
                      required

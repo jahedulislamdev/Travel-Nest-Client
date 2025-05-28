@@ -12,7 +12,7 @@ const Nav = () => {
          <NavLink to={'/my-list'}> My List </NavLink>
       </>
    return (
-      <div className="navbar bg-base-100 shadow-sm px-4 ">
+      <div className="navbar bg-base-100 px-4 sticky top-0 z-50 border-b border-gray-700 shadow">
          <div className="navbar-start">
             <button className=" md:hidden" onClick={() => document.getElementById('mobileNavLinks').showModal()}><TbMenu3 className='size-7 opacity-60' /></button>
             <dialog id="mobileNavLinks" className="modal modal-start">

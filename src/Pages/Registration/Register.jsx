@@ -1,9 +1,31 @@
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+   const handleFormSubmit = (e) => {
+      e.preventDefault();
+      const form = new FormData(e.currentTarget)
+      const name = form.get("name");
+      const email = form.get("email")
+      const profile = form.get("photo")
+      const password = form.get("password")
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+      const terms = form.get('terms');
+      if (!passwordRegex.test(password)) {
+         toast.error("Password needs 6+ chars with upper & lower case.")
+         return;
+      } else if (!terms) {
+         alert("accept our terms and conditions")
+      }
+
+      const user = { name, email, profile, password }
+      console.log(user);
+
+
+   }
    return (
       <div className="bg-base-200 flex items-center justify-center p-1.5 md:px-4 py-7 font-ubuntu">
-         <form className="w-full max-w-md bg-base-100 shadow-xl rounded-xl p-4 md:p-8 space-y-4 border-2 border-gray-800">
+         <form onSubmit={handleFormSubmit} className="w-full max-w-md bg-base-100 shadow-xl rounded-xl p-4 md:p-8 space-y-4 border-2 border-gray-800">
             <h2 className="text-2xl font-bold text-center text-sky-200">Register</h2>
 
             {/* Username */}
@@ -29,9 +51,9 @@ const Register = () => {
             {/* Mobile Number */}
             <div className="form-control">
                <input
-                  type="number"
-                  name="number"
-                  placeholder="Enter your mobile number"
+                  type="url"
+                  name="photo"
+                  placeholder="Enter your photo Url"
                   className="input focus:outline-0 w-full input-lg"
                   required
                />
@@ -62,6 +84,7 @@ const Register = () => {
                </p>
             </div>
          </form>
+         <Toaster position="top-right" reverseOrder={true} />
       </div>
    );
 };
