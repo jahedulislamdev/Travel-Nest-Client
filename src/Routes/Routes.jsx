@@ -8,10 +8,14 @@ import AllSpot from './../Pages/TravelSpots/AllSpot';
 import Terms from "../Pages/Terms/Terms";
 import SpotDetails from "../Pages/TravelSpots/SpotDetails";
 import Spiner from "../Components/Loading/Spiner";
+import App from "../App";
 
 const route = createBrowserRouter([
    {
       path: "/", element: <Root />, children: [
+         {
+            path: '/', element: <App />
+         },
          {
             path: "/add-new-spot", element: <AddSpot />,
             hydrateFallbackElement: <Spiner />

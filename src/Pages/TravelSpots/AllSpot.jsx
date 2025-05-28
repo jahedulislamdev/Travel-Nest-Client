@@ -1,9 +1,10 @@
-import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllSpot = () => {
    const spots = useLoaderData();
-   console.log(spots);
+   if (!spots.length) {
+      return <div>There are no spot avilable right now.</div>
+   }
    return (
       <div>
          {
