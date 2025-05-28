@@ -1,9 +1,11 @@
+import { useContext } from 'react';
 import { FaUser } from 'react-icons/fa';
-import { LuMenu } from 'react-icons/lu';
 import { TbMenu3 } from 'react-icons/tb';
 import { Link, NavLink } from 'react-router-dom';
+import AuthContext from '../../Provider/context';
 
 const Nav = () => {
+   const { user, logout } = useContext(AuthContext);
    const navLinks =
       <>
          <NavLink to={'/'}> Home </NavLink>
@@ -29,8 +31,15 @@ const Nav = () => {
             {navLinks}
          </div>
          <Link to={'/'} className="btn btn-ghost text-xl uppercase md:hidden font-ubuntu font-bold">TravelNest</Link>
-         <div className="navbar-end opacity-70">
-            <Link to={"/login"} className='font-medium uppercase flex '><FaUser className='size-5' /> </Link>
+         <div className="navbar-end ">
+            {!user ? <Link to={"/login"} className='font-medium uppercase flex '><FaUser className='size-5' /> </Link> :
+
+               <div className='dropdown dropdown-left cursor-pointer'>
+                  <img tabIndex={0} src={user?.photoURL} className='h-5 w-5 md:w-9 md:h-9 rounded-full shadow-md object-center object-cover' />
+                  <ul tabIndex={0} className="mt-13 dropdown-content menu bg-gray-100  text-black rounded-box z-1000  min-h-28 w-52 p-2 shadow-sm">
+                     <button onClick={logout} className='btn btn-error'>Logout</button>
+                  </ul>
+               </div>}
          </div>
       </div>
    );

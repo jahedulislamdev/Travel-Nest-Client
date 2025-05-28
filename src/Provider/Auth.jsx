@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import AuthProvider from './context';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useEffect, useState } from 'react';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import app from '../Firebase/config';
+import AuthContext from './context';
+import toast from 'react-hot-toast';
+
 
 const Auth = ({ children }) => {
    const [user, setUser] = useState(null);
@@ -30,6 +32,73 @@ const Auth = ({ children }) => {
          setLoading(false);
       }
    };
+   // logout existing user
+   const logout = async () => {
+      setLoading(true)
+      signOut(auth)
+         .then(() => {
+            setUser(null)
+            toast.success("Logout Successfully!")
+         })
+         .catch((err) => {
+            toast.error("Logout Faild! Please Try Again!");
+            console.error(err);
+         })
+   }
+   // login With Google
+   const Gprovider = new GoogleAuthProvider()
+   const loginWithGoogle = async (navigate) => {
+      if (user) {
+         return toast.error('You are already logged in!')
+      }
+      setLoading(true)
+      signInWithPopup(auth, Gprovider)
+         .then(res => {
+            toast.success("Login Successfully!")
+            setUser(res.user)
+         })
+         .catch(err => {
+            toast.error('Login Faild!')
+            console.log(err)
+         })
+         .finally(() => {
+            setLoading(false)
+            navigate('/')
+         })
+   }
+
+   // login with facebook
+   const Fprovider = new FacebookAuthProvider()
+
+   const loginWithFacebook = async (navigate) => {
+      if (user) {
+         return toast.error('You are already logged in!')
+      }
+      setLoading(true)
+      signInWithPopup(auth, Fprovider)
+         .then(res => {
+            toast.success("Login Successfully!")
+            setUser(res.user)
+         })
+         .catch(err => {
+            toast.error('Login Faild!')
+            console.log(err)
+         })
+         .finally(() => {
+            setLoading(false)
+            navigate('/')
+         })
+   }
+
+
+   // auth observer
+   useEffect(() => {
+      const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+         setUser(currentUser)
+         setLoading(false)
+      })
+      return () => unSubscribe()
+   }, [auth])
 
    const providedData = {
       user,
@@ -38,12 +107,15 @@ const Auth = ({ children }) => {
       setLoading,
       registrUser,
       loginUser,
+      logout,
+      loginWithGoogle,
+      loginWithFacebook,
    };
 
    return (
-      <AuthProvider.Provider value={providedData}>
+      <AuthContext.Provider value={providedData}>
          {children}
-      </AuthProvider.Provider>
+      </AuthContext.Provider>
    );
 };
 
