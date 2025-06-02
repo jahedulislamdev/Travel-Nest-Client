@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import AuthContext from "../../Provider/context";
 
 const Login = () => {
    const navigate = useNavigate();
+   const path = useLocation();
    const { loginUser, setUser, loginWithGoogle, loginWithFacebook } = useContext(AuthContext);
    const handleFormSubmit = (e) => {
       e.preventDefault();
@@ -16,7 +17,6 @@ const Login = () => {
       loginUser(email, password)
          .then(res => {
             setUser(res.user);
-            console.log(res.user)
             toast.success('Login successfully 🎉', {
                style: {
                   background: '#1E293B',
@@ -29,7 +29,7 @@ const Login = () => {
                icon: '🟢',
             });
             e.target.reset();
-            navigate('/')
+            navigate(path.state ? path.state : '/')
          })
          .catch(err => {
             if (err.code === "auth/invalid-credential") {
@@ -80,8 +80,8 @@ const Login = () => {
             <div className="divider">or</div>
             {/* Social Login */}
             <div className="flex justify-center itemsc-center w-full space-x-5 py-5">
-               <button onClick={() => loginWithGoogle(navigate)} type="button" className="w-full flex justify-center items-center cursor-pointer border border-gray-700 p-2 rounded hover:bg-gray-100/10 transition-colors"><FcGoogle className="mr-2 size-5" />Google</button>
-               <button onClick={() => loginWithFacebook(navigate)} type="button" className="w-full flex justify-center items-center cursor-pointer border border-gray-700 p-2 rounded hover:bg-gray-100/10 transition-colors"><FaFacebook className="mr-2 size-5 text-blue-400" />Facebook</button>
+               <button onClick={() => loginWithGoogle(navigate, path)} type="button" className="w-full flex justify-center items-center cursor-pointer border border-gray-700 p-2 rounded hover:bg-gray-100/10 transition-colors"><FcGoogle className="mr-2 size-5" />Google</button>
+               <button onClick={() => loginWithFacebook(navigate, path)} type="button" className="w-full flex justify-center items-center cursor-pointer border border-gray-700 p-2 rounded hover:bg-gray-100/10 transition-colors"><FaFacebook className="mr-2 size-5 text-blue-400" />Facebook</button>
             </div>
          </form>
 

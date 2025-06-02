@@ -47,6 +47,7 @@ const Register = () => {
                icon: '🟢',
             });
             setUser(null)
+            e.target.reset();
          })
          .catch((err) => {
             if (err.code === "auth/email-already-in-use") {

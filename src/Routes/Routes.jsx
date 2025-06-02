@@ -9,6 +9,7 @@ import Terms from "../Pages/Terms/Terms";
 import SpotDetails from "../Pages/TravelSpots/SpotDetails";
 import Spiner from "../Components/Loading/Spiner";
 import App from "../App";
+import Private from "../Private/Private";
 
 const route = createBrowserRouter([
    {
@@ -17,7 +18,7 @@ const route = createBrowserRouter([
             path: '/', element: <App />
          },
          {
-            path: "/add-new-spot", element: <AddSpot />,
+            path: "/add-new-spot", element: <Private><AddSpot /></Private>,
             hydrateFallbackElement: <Spiner />
          },
          {
@@ -29,7 +30,7 @@ const route = createBrowserRouter([
             hydrateFallbackElement: <Spiner />
          },
          {
-            path: "/my-list", element: <MyList />,
+            path: "/my-list", element: <Private><MyList /></Private>,
             hydrateFallbackElement: <Spiner />
          },
          {

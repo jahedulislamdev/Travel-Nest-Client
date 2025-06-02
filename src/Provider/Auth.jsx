@@ -47,7 +47,7 @@ const Auth = ({ children }) => {
    }
    // login With Google
    const Gprovider = new GoogleAuthProvider()
-   const loginWithGoogle = async (navigate) => {
+   const loginWithGoogle = async (navigate, path) => {
       if (user) {
          return toast.error('You are already logged in!')
       }
@@ -63,14 +63,14 @@ const Auth = ({ children }) => {
          })
          .finally(() => {
             setLoading(false)
-            navigate('/')
+            navigate(path.state ? path.state : '/')
          })
    }
 
    // login with facebook
    const Fprovider = new FacebookAuthProvider()
 
-   const loginWithFacebook = async (navigate) => {
+   const loginWithFacebook = async (navigate, path) => {
       if (user) {
          return toast.error('You are already logged in!')
       }
@@ -86,7 +86,7 @@ const Auth = ({ children }) => {
          })
          .finally(() => {
             setLoading(false)
-            navigate('/')
+            navigate(path.state ? path.state : '/');
          })
    }
 

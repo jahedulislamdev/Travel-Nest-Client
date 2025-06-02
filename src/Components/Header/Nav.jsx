@@ -27,10 +27,12 @@ const Nav = () => {
             </dialog>
             <Link to={'/'} className="font-bold text-xl uppercase hidden md:block font-ubuntu">TravelNest</Link>
          </div>
-         <div className="navbar-center uppercase space-x-10 font-medium hidden md:block opacity-70 font-ubuntu">
-            {navLinks}
+         <div className="navbar-center ">
+            <Link to={'/'} className="btn btn-ghost text-xl uppercase md:hidden font-ubuntu font-bold">TravelNest</Link>
+            <div className='hidden md:block uppercase space-x-4 md:space-x-5 font-medium opacity-70 font-ubuntu'>
+               {navLinks}
+            </div>
          </div>
-         <Link to={'/'} className="btn btn-ghost text-xl uppercase md:hidden font-ubuntu font-bold">TravelNest</Link>
          <div className="navbar-end ">
             {!user ? <Link to={"/login"} className='font-medium uppercase flex '><FaUser className='size-5' /> </Link> :
 
