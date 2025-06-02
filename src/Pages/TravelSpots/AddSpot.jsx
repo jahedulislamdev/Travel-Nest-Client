@@ -24,7 +24,6 @@ const AddSpot = () => {
       const duration = formData.get('duration');
 
       const spotData = { spotName, spotImage, location, shortDescription, avgCost, season, travelTime, visitorPerYear, duration, userEmail, userName };
-      console.log(spotData);
       fetch('http://localhost:5000/spots', {
          method: "POST",
          headers: {

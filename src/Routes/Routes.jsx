@@ -10,6 +10,7 @@ import SpotDetails from "../Pages/TravelSpots/SpotDetails";
 import Spiner from "../Components/Loading/Spiner";
 import App from "../App";
 import Private from "../Private/Private";
+import UpdateSpot from "../Pages/TravelSpots/UpdateSpot";
 
 
 const route = createBrowserRouter([
@@ -46,6 +47,11 @@ const route = createBrowserRouter([
          },
          {
             path: "/spot-detail/:id", element: <Private><SpotDetails /></Private>,
+            loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`),
+            hydrateFallbackElement: <Spiner />
+         },
+         {
+            path: "/update-spot/:id", element: <Private><UpdateSpot /></Private>,
             loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`),
             hydrateFallbackElement: <Spiner />
          }
