@@ -9,3 +9,7 @@
     --font-kumbh: "Kumbh Sans", sans-serif;
     --font-Onset: "Onest", sans-serif;
 }
+
+.active {
+    @apply border-b-2 p-2;
+}

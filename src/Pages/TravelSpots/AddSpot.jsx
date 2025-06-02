@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
+import AuthContext from '../../Provider/context';
 
 const AddSpot = () => {
    const seasons = ["Spring", "Summer", "Rainy", "Autumn", "Late Autumn", "Winter"];
@@ -8,6 +9,7 @@ const AddSpot = () => {
    const [season, setSeason] = useState('');
    const [travelTime, setTravelTime] = useState('');
 
+   const { user } = useContext(AuthContext);
    const handleFormSubmit = (e) => {
       e.preventDefault();
       const formData = new FormData(e.target);
@@ -140,9 +142,11 @@ const AddSpot = () => {
                   <label className='label text-sm'>User Email</label>
                   <input
                      type='email'
+                     defaultValue={user?.email || ''}
                      name='userEmail'
                      placeholder='User email address'
                      className='input input-bordered w-full'
+                     readOnly
                      required
                   />
                </div>
@@ -150,9 +154,11 @@ const AddSpot = () => {
                   <label className='label text-sm'>User Name</label>
                   <input
                      type='text'
+                     defaultValue={user?.displayName || ''}
                      name='userName'
                      placeholder='User name'
                      className='input input-bordered w-full'
+                     readOnly
                      required
                   />
                </div>

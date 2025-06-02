@@ -11,6 +11,7 @@ import Spiner from "../Components/Loading/Spiner";
 import App from "../App";
 import Private from "../Private/Private";
 
+
 const route = createBrowserRouter([
    {
       path: "/", element: <Root />, children: [
@@ -30,7 +31,8 @@ const route = createBrowserRouter([
             hydrateFallbackElement: <Spiner />
          },
          {
-            path: "/my-list", element: <Private><MyList /></Private>,
+            path: "/my-list/:email", element: <Private><MyList /></Private>,
+            loader: ({ params }) => fetch(`http://localhost:5000/spots/email/${params.email}`),
             hydrateFallbackElement: <Spiner />
          },
          {
@@ -43,7 +45,7 @@ const route = createBrowserRouter([
             hydrateFallbackElement: <Spiner />
          },
          {
-            path: "/spot-detail/:id", element: <SpotDetails />,
+            path: "/spot-detail/:id", element: <Private><SpotDetails /></Private>,
             loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`),
             hydrateFallbackElement: <Spiner />
          }
