@@ -1,12 +1,13 @@
-import React from 'react';
 import Banner from './Pages/Home/Banner';
 import Destination from './Pages/Home/Destination';
+import Trendy from './Pages/TravelSpots/Trendy';
 
 const App = () => {
   return (
     <div >
       <Banner />
       <Destination />
+      <Trendy />
     </div>
   );
 };

@@ -11,13 +11,15 @@ import Spiner from "../Components/Loading/Spiner";
 import App from "../App";
 import Private from "../Private/Private";
 import UpdateSpot from "../Pages/TravelSpots/UpdateSpot";
+import Trendy from "../Pages/TravelSpots/Trendy";
 
 
 const route = createBrowserRouter([
    {
       path: "/", element: <Root />, children: [
          {
-            path: '/', element: <App />
+            path: '/', element: <App />,
+            loader: () => fetch('http://localhost:5000/spots'),
          },
          {
             path: "/add-new-spot", element: <Private><AddSpot /></Private>,
@@ -54,6 +56,11 @@ const route = createBrowserRouter([
             path: "/update-spot/:id", element: <Private><UpdateSpot /></Private>,
             loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`),
             hydrateFallbackElement: <Spiner />
+         },
+         {
+            path: '/trendy', element: <Private><Trendy /></Private>,
+            loader: () => fetch('http://localhost:5000/spots'),
+            hydrateFallbackElement: <Spiner />
          }
 
       ]
@@ -61,4 +68,4 @@ const route = createBrowserRouter([
 
 ])
 
-export default route
+export default route;

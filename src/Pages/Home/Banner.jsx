@@ -1,6 +1,6 @@
 const Banner = () => {
    return (
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-96 md:h-screen overflow-hidden">
          {/* 🔹 Background Video */}
          <video
             src="https://assets.mixkit.co/videos/41576/41576-720.mp4"

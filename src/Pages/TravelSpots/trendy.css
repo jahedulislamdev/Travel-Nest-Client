@@ -1,0 +1,21 @@
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: black !important;
+    font-size: 18px !important;
+    background: rgba(207, 207, 207, 0.621);
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out;
+}
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+    opacity: 1;
+}
+
+@media screen and (max-width: 450px) {
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        display: none !important;
+    }
+}
