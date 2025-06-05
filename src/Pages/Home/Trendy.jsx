@@ -17,9 +17,11 @@ const Trendy = () => {
          <div className='flex justify-between items-center p-4'>
             <div className='space-y-2'>
                <p className='text-purple-400'>Travel Destinations</p>
-               <p className='text-2xl md:text-4xl font-semibold'>Trendy Travel Locations</p>
+               <p className='text-xl md:text-4xl font-semibold'>Trendy Travel Locations</p>
             </div>
-            <Link to={'/all-spot'} className='flex items-center md:text-lg bg-amber-700/40 px-2 py-2 md:py-3 md:px-5 rounded-lg  md:rounded-xl'>Explore <span className='hidden md:inline'>More</span> <BsArrowRight className='size-6 ms-1' /></Link>
+            <Link to={'/all-spot'} className="mt-4 px-6 py-2 flex items-center bg-white text-black rounded-full shadow-md hover:bg-gray-200 transition-all duration-300">
+               Explore <span className='hidden md:inline'>More</span> <BsArrowRight className='size-6 ms-1' />
+            </Link>
          </div>
          <div>
             <div className="pt-5 ">
@@ -42,7 +44,7 @@ const Trendy = () => {
                   {
                      trendySpots.map((spot, index) => (
                         <SwiperSlide key={`${spot.id}-${index}`} id="trendingSlide">
-                           <div key={spot._id} className='h-[370px] md:h-[415px] bg-base rounded-lg p-1 border border-gray-500/20'>
+                           <div key={spot._id} className='  bg-base rounded-lg p-1 border border-gray-500/20'>
                               <Link to={`/spot-detail/${spot._id}`} key={spot._id} className='relative'>
                                  <img src={spot.spotImage} alt={spot.spotName} className='w-full h-45 md:h-60 object-cover rounded-xl' />
                                  <div className='absolute top-2 right-2  bg-base-100 p-2 rounded-lg flex items-center justify-center'>
@@ -51,7 +53,7 @@ const Trendy = () => {
                               </Link>
                               <div className='space-y-2 p-3'>
                                  <div className='flex justify-between space-x-1'>
-                                    <Link to={`/spot-detail/${spot._id}`} key={spot._id} className='text-2xl font-medium mt-2 capitalize'>{spot.spotName.slice(0, 36)}{spot.spotName.length > 36 && <span>...</span>} </Link>
+                                    <Link to={`/spot-detail/${spot._id}`} key={spot._id} className='text-xl md:text-2xl font-medium mt-2 capitalize'>{spot.spotName.slice(0, 36)}{spot.spotName.length > 36 && <span>...</span>} </Link>
                                     <div className='flex items-center justify-center whitespace-nowrap'><CiTimer className='size-5 font-medium me-1' /> {spot.duration} hours</div>
                                  </div>
                                  <p className='text-gray-500 flex items-center'> <CiLocationOn className='me-2' />{spot.location}</p>

@@ -13,3 +13,6 @@
 .active {
     @apply border-b-2 p-2;
 }
+.title-text-color {
+    @apply bg-gradient-to-r from-purple-50 to-purple-500 bg-clip-text text-transparent;
+}

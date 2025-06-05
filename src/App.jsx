@@ -1,3 +1,4 @@
+import AboutAgency from "./Pages/Home/AboutAgency";
 import Banner from "./Pages/Home/Banner";
 import Destination from "./Pages/Home/Destination";
 import Trendy from "./Pages/Home/Trendy";
@@ -12,6 +13,7 @@ const App = () => {
       <Destination />
       <Trendy />
       <WhatWeOffer />
+      <AboutAgency />
     </div>
   );
 };

@@ -44,7 +44,7 @@ const AddSpot = () => {
             onSubmit={handleFormSubmit}
             className='w-full md:max-w-4xl bg-base-100 p-8 rounded-3xl shadow-xl space-y-6'
          >
-            <h2 className='text-3xl font-semibold text-center text-primary  capitalize tracking-wider'>
+            <h2 className='text-3xl font-semibold text-center title-text-color capitalize tracking-wider'>
                Add New Spot
             </h2>
 
