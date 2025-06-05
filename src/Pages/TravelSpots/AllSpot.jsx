@@ -10,12 +10,11 @@ const AllSpot = () => {
    return (
       <div>
          <h2 className='text-3xl font-semibold text-center p-4 font-Onset text-purple-300'>All Travel Spots</h2>
-
          {
             spots.length > 0 ? (
                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 font-Onset '>
                   {spots.map(spot => (
-                     <div key={spot._id} className='bg-base rounded-lg p-0.5 border border-gray-300/40'>
+                     <div key={spot._id} className='bg-base rounded-lg p-1 border border-gray-300/20'>
                         <Link to={`/spot-detail/${spot._id}`} key={spot._id} className='relative'>
                            <img src={spot.spotImage} alt={spot.spotName} className='w-full h-60 object-cover rounded-xl' />
                            <div className='absolute top-2 right-2  bg-base-100 p-2 rounded-lg flex items-center justify-center'>

@@ -11,7 +11,8 @@ import Spiner from "../Components/Loading/Spiner";
 import App from "../App";
 import Private from "../Private/Private";
 import UpdateSpot from "../Pages/TravelSpots/UpdateSpot";
-import Trendy from "../Pages/TravelSpots/Trendy";
+import Trendy from "../Pages/Home/Trendy";
+
 
 
 const route = createBrowserRouter([

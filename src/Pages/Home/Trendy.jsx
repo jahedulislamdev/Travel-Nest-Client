@@ -19,10 +19,10 @@ const Trendy = () => {
                <p className='text-purple-400'>Travel Destinations</p>
                <p className='text-2xl md:text-4xl font-semibold'>Trendy Travel Locations</p>
             </div>
-            <Link to={'/all-spot'} className='flex items-center  md:text-lg bg-amber-700/40 px-2 py-2 md:py-3 md:px-5 rounded-lg  md:rounded-xl'>Explore <span className='hidden md:inline'>More</span> <BsArrowRight className='size-6 ms-1' /></Link>
+            <Link to={'/all-spot'} className='flex items-center md:text-lg bg-amber-700/40 px-2 py-2 md:py-3 md:px-5 rounded-lg  md:rounded-xl'>Explore <span className='hidden md:inline'>More</span> <BsArrowRight className='size-6 ms-1' /></Link>
          </div>
          <div>
-            <div className="pt-5 px-2">
+            <div className="pt-5 ">
                <Swiper
                   slidesPerView={1}
                   spaceBetween={10}
@@ -42,7 +42,7 @@ const Trendy = () => {
                   {
                      trendySpots.map((spot, index) => (
                         <SwiperSlide key={`${spot.id}-${index}`} id="trendingSlide">
-                           <div key={spot._id} className='h-[370px] md:h-[415px] bg-base rounded-lg p-0.5 border border-gray-300/40'>
+                           <div key={spot._id} className='h-[370px] md:h-[415px] bg-base rounded-lg p-1 border border-gray-500/20'>
                               <Link to={`/spot-detail/${spot._id}`} key={spot._id} className='relative'>
                                  <img src={spot.spotImage} alt={spot.spotName} className='w-full h-45 md:h-60 object-cover rounded-xl' />
                                  <div className='absolute top-2 right-2  bg-base-100 p-2 rounded-lg flex items-center justify-center'>
