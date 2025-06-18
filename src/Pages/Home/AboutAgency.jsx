@@ -1,9 +1,8 @@
-import React from 'react';
 import { IoCheckboxOutline } from 'react-icons/io5';
 
 const WhyChooseUs = () => {
    return (
-      <section className="px-6 py-16 md:px-10 lg:px-20 font-Onset bg-gray-50 text-gray-800">
+      <section className="px-6 py-16 md:px-10 lg:px-20 font-Onset bg-base-300 text-gray-800">
          <div className="grid md:grid-cols-3 gap-10 items-center">
             {/* Left Block */}
             <div className="space-y-6">

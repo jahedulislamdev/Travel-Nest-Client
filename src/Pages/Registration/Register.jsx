@@ -80,8 +80,8 @@ const Register = () => {
 
    return (
       <div className="bg-base-200 flex items-center justify-center p-1.5 md:px-4 py-7 font-ubuntu">
-         <form onSubmit={handleFormSubmit} className="w-full max-w-md bg-base-100 shadow-xl rounded-xl p-4 md:p-8 space-y-4 border-2 border-gray-800">
-            <h2 className="text-2xl font-bold text-center text-sky-200">Register</h2>
+         <form onSubmit={handleFormSubmit} className="w-full max-w-md bg-base-100 shadow-xl rounded-xl p-4 md:p-8 space-y-4 border border-gray-700/40 animate-fade-in-up">
+            <h2 className="text-2xl font-bold text-center text-sky-500">Register</h2>
 
             {/* Username */}
             <div className="form-control">
@@ -108,16 +108,16 @@ const Register = () => {
             <div className="form-control">
                <label className="label cursor-pointer text-sm">
                   <input type="checkbox" name="terms" className="checkbox checkbox-xs mr-2" required />
-                  Accept our <Link to="/terms" className="text-sky-200">terms and conditions</Link>
+                  Accept our <Link to="/terms" className="text-sky-500">terms and conditions</Link>
                </label>
             </div>
 
             {/* Submit & Link */}
             <div>
-               <button type="submit" className="btn btn-primary w-full mt-4">Register</button>
+               <button type="submit" className="btn bg-sky-700 text-white w-full mt-4">Register</button>
                <p className="text-sm opacity-80 p-1 text-base-content/80 text-center">
                   Already have an account?{" "}
-                  <Link to="/login" className="text-sky-200 font-medium">Login</Link>
+                  <Link to="/login" className="text-sky-500 font-medium">Login</Link>
                </p>
             </div>
          </form>

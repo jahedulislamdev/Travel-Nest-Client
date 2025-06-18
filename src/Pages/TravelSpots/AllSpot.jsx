@@ -14,9 +14,9 @@ const AllSpot = () => {
             spots.length > 0 ? (
                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 font-Onset '>
                   {spots.map(spot => (
-                     <div key={spot._id} className='bg-base rounded-lg p-1 border border-gray-300/20'>
+                     <div key={spot._id} className='bg-base rounded-lg border border-gray-300/20 animate-fade-in-up overflow-hidden'>
                         <Link to={`/spot-detail/${spot._id}`} key={spot._id} className='relative'>
-                           <img src={spot.spotImage} alt={spot.spotName} className='w-full h-60 object-cover rounded-xl' />
+                           <img src={spot.spotImage} alt={spot.spotName} className='w-full h-60 object-cover rounded-xl overflow-hidden ' />
                            <div className='absolute top-2 right-2  bg-base-100 p-2 rounded-lg flex items-center justify-center'>
                               <p><IoMdStar className='size-4.5 text-amber-500 me-1' /></p><p>4.3 (4)</p>
                            </div>

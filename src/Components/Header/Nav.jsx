@@ -22,7 +22,7 @@ const Nav = () => {
          <NavLink onClick={closeMobileNav} to={`/my-list/${user?.email}`}> My List </NavLink>
       </>
    return (
-      <div className="navbar bg-base-300/90  px-4 sticky top-0 z-50 border-b border-gray-700 shadow ">
+      <div className="navbar bg-base-300/90 px-4 sticky top-0 z-50 border-b border-gray-700 shadow ">
          <div className="navbar-start">
             <button className=" md:hidden" onClick={() => document.getElementById('mobileNavLinks').showModal()}><TbMenu3 className='size-7 opacity-60' /></button>
             <dialog id="mobileNavLinks" className="modal modal-start">
@@ -30,16 +30,16 @@ const Nav = () => {
                   <form method="dialog">
                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                   </form>
-                  <ul className="menu uppercase font-semibold font-Onset mt-10 rounded-box w-56 space-y-5 p-2">
+                  <ul className="menu font-semibold font-Onset mt-10 rounded-box w-56 space-y-5 p-2">
                      {navLinks}
                   </ul>
                </div>
             </dialog>
             <Link to={'/'} className="font-bold text-xl uppercase hidden md:block font-ubuntu">TravelNest</Link>
          </div>
-         <div className="navbar-center ">
+         <div className="navbar-center">
             <Link to={'/'} className="btn btn-ghost text-xl uppercase md:hidden font-ubuntu font-bold">TravelNest</Link>
-            <div className='hidden md:block uppercase space-x-4 md:space-x-5 font-medium opacity-70 font-ubuntu'>
+            <div className='hidden md:block text-lg space-x-4 md:space-x-5 opacity-70 font-Onset'>
                {navLinks}
             </div>
          </div>

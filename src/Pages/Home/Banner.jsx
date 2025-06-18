@@ -16,7 +16,7 @@ const Banner = () => {
          {/* 🔹 Content */}
          <div className="relative z-20 flex items-center justify-center h-full px-4 md:px-12">
             <div className="text-left max-w-4xl space-y-6 animate-fade-in-up">
-               <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight drop-shadow-md">
+               <h1 className="text-4xl md:text-6xl font-semibold text-white leading-tight drop-shadow-md">
                   Discover the World Differently
                </h1>
                <p className="text-lg md:text-2xl text-gray-200 max-w-2xl font-light drop-shadow">

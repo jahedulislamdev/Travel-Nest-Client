@@ -56,7 +56,7 @@ const MyList = () => {
             yourSpot?.length > 0 ? (
                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 font-Onset '>
                   {loadSpot?.map(spot => (
-                     <div key={spot._id} className='bg-base rounded-lg p-3 border border-gray-300/10 '>
+                     <div key={spot._id} className='bg-base rounded-lg p-3 border border-gray-300/10 animate-fade-in-up'>
                         <Link className="h-full" to={`/spot-detail/${spot._id}`}>
                            <div className="flex">
                               <img src={spot.spotImage} alt={spot.spotName} className='w-30 object-center object-cover rounded-xl' />

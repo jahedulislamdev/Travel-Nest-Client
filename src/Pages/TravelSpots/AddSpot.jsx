@@ -39,7 +39,7 @@ const AddSpot = () => {
    };
 
    return (
-      <div className='min-h-screen flex items-center justify-center bg-base-200 p-4  font-Onset'>
+      <div className='min-h-screen flex items-center justify-center bg-base-200 p-4 font-Onset animate-fade-in-up'>
          <form
             onSubmit={handleFormSubmit}
             className='w-full md:max-w-4xl bg-base-100 p-8 rounded-3xl shadow-xl space-y-6'

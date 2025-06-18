@@ -11,8 +11,32 @@
 }
 
 .active {
-    @apply border-b-2 p-2;
+    @apply font-bold;
 }
 .title-text-color {
     @apply bg-gradient-to-r from-purple-50 to-purple-500 bg-clip-text text-transparent;
+}
+/* img zoom hover */
+.img-hover-zoom {
+    transition: transform 1s ease;
+}
+
+.img-hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+/* an */
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out both;
 }
