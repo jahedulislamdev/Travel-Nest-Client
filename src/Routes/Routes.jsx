@@ -21,6 +21,7 @@ const route = createBrowserRouter([
          {
             path: '/', element: <App />,
             loader: () => fetch('http://localhost:5000/spots'),
+            hydrateFallbackElement: <Spiner />
          },
          {
             path: "/add-new-spot", element: <Private><AddSpot /></Private>,
