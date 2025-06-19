@@ -4,7 +4,7 @@ const Banner = () => {
       <div className="relative w-full h-[90vh] md:h-screen overflow-hidden font-Onset ">
          {/* 🔹 Background Image */}
          <img
-            src="https://www.pixelstalk.net/wp-content/uploads/2016/08/Travel-Download-Free-Images-HD.jpg"
+            src="https://i.postimg.cc/dV15qphG/i-parallax-02-slide.jpg"
             alt="Travel Background"
             loading="lazy"
             className="absolute top-0 left-0 w-full h-full object-cover object-center z-0"

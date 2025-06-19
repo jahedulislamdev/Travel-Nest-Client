@@ -49,7 +49,7 @@ const UpdateSpot = () => {
       <div className="flex items-center justify-center min-h-screen bg-base-200 p-4 font-Onset">
          <form
             onSubmit={handleUpdateFormSubmit}
-            className='w-full md:max-w-4xl bg-base-100 p-8 rounded-3xl shadow-xl space-y-6'
+            className='w-full md:max-w-4xl bg-base-100 p-8 rounded-3xl shadow-xl space-y-6 animate-fade-in-up'
          >
             <h2 className='text-3xl font-semibold text-center text-purple-300 capitalize tracking-wider'>
                Update Your Spot
