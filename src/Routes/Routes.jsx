@@ -57,6 +57,7 @@ const route = createBrowserRouter([
          {
             path: "/update-spot/:id", element: <Private><UpdateSpot /></Private>,
             loader: ({ params }) => fetch(`http://localhost:5000/spots/${params.id}`),
+
             hydrateFallbackElement: <Spiner />
          },
          {
